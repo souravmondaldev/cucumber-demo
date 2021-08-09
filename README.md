@@ -1,2 +1,0 @@
-# cucumber-demo
-Cucumber Basics
