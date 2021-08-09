@@ -24,7 +24,7 @@ pipeline{
             }
         }
 	stage ('Run Test cucumber'){
-         script 
+         steps
             {
 	    sh "mvn clean test -Dcucumber.options=\"src/test/resources/features/ --tags @cucumber-demo\""
 	    }
