@@ -23,13 +23,8 @@ pipeline{
                 bat "mvn package"
             }
         }
-	stage ('Run Test cucumber'){
-         steps
-            {
-	    sh "mvn clean test -Dcucumber.options=\"src/test/resources/features/ --tags @cucumber-demo\""
-	    }
-	}
-      stage ('Cucumber Reports') {
+
+        stage ('Cucumber Reports') {
 
             steps {
                 cucumber buildStatus: "UNSTABLE",
