@@ -29,11 +29,16 @@ pipeline{
 	    sh "mvn clean test -Dcucumber.options=\"src/test/resources/features/ --tags @cucumber-demo\""
 	    }
 	}
-      finally {
-                           cucumber buildStatus: "UNSTABLE", 
-                           fileIncludePattern: "**/cucumber.json",
-                           jsonReportDirectory: 'target'
-                            }
+      stage ('Cucumber Reports') {
+
+            steps {
+                cucumber buildStatus: "UNSTABLE",
+                    fileIncludePattern: "**/cucumber.json",
+                    jsonReportDirectory: 'target'
+
+            }
+
+        }
 
     }
 
