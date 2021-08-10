@@ -7,7 +7,8 @@ import io.cucumber.junit.platform.engine.Cucumber;
 @CucumberOptions(
 		features = "src/test/resources",
 		glue = "com.sapient.trg",
-		plugin = { "pretty", "json:target/cucumber.json" }, 
+		//plugin = { "pretty", "json:target/cucumber.json" }, 
+		format = { json:target/cucumber.json"},
 		tags =  "@cucumber" 
 		)
 public class RunCucumberTest {
